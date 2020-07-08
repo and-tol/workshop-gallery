@@ -10,6 +10,15 @@ export const Gallery = () => {
                 <div className = 'gallery'>
                     <div>IMG</div>
                 </div>
+                <div className = 'buttons-wrapper'>
+                    <div className = 'buttons' >
+                        <button>Prev</button>
+                        <button>Next</button>
+                    </div>
+                </div>
+                <div className = 'images'>
+                    IMAGES
+                </div>
             </div>
         </>
     );
