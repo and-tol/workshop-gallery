@@ -54,6 +54,10 @@ export const Gallery = () => {
     const handlePrevClick = () => {
         const idx = images.findIndex(({ id })=> id === imageId);
         const prevElement = images[ idx - 1 ];
+
+        if (prevElement) {
+            setImageId(prevElement.id);
+        }
     };
 
     return (
@@ -65,7 +69,7 @@ export const Gallery = () => {
                 </div>
                 <div className = 'buttons-wrapper'>
                     <div className = 'buttons' >
-                        <button>Prev</button>
+                        <button onClick = { handlePrevClick }>Prev</button>
                         <button onClick = { handleNextClick }>Next</button>
                     </div>
                 </div>
