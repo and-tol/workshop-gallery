@@ -2,7 +2,26 @@ import React from 'react';
 
 import './styles/init.css';
 
+// Data
+import images from './assets/data/images.json';
+
 export const Gallery = () => {
+    const createImagesJSX = () => {
+        const result = images.map((item) => {
+            const { id, src } = item;
+
+            return (
+                <img
+                    data-id = { id }
+                    key = { id }
+                    src = { src }
+                />
+            );
+        });
+
+        return result;
+    };
+
     return (
         <>
             <h1 className = 'title'>Галерея</h1>
@@ -17,7 +36,7 @@ export const Gallery = () => {
                     </div>
                 </div>
                 <div className = 'images'>
-                    IMAGES
+                    { createImagesJSX() }
                 </div>
             </div>
         </>
