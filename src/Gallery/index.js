@@ -14,6 +14,7 @@ export const Gallery = () => {
 
             return (
                 <img
+                    className = { id === imageId ? 'active' : '' }
                     data-id = { id }
                     key = { id }
                     src = { src }
@@ -43,7 +44,7 @@ export const Gallery = () => {
     };
 
     const handleNextClick = () => {
-        const idx = images.findIndex(({ id })=> id === imageId);
+        const idx = images.findIndex(({ id }) => id === imageId);
         const nextElement = images[ idx + 1 ];
 
         if (nextElement) {
@@ -52,7 +53,7 @@ export const Gallery = () => {
     };
 
     const handlePrevClick = () => {
-        const idx = images.findIndex(({ id })=> id === imageId);
+        const idx = images.findIndex(({ id }) => id === imageId);
         const prevElement = images[ idx - 1 ];
 
         if (prevElement) {
