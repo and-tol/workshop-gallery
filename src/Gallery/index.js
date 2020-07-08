@@ -8,6 +8,12 @@ import images from './assets/data/images.json';
 export const Gallery = () => {
     const [ imageId, setImageId ] = useState(images[ 0 ].id);
 
+    const setImage = (event) => {
+        const id = event.target.getAttribute('data-id');
+
+        setImageId(id);
+    };
+
     const createImagesJSX = () => {
         const result = images.map((item) => {
             const { id, src } = item;
@@ -18,6 +24,7 @@ export const Gallery = () => {
                     data-id = { id }
                     key = { id }
                     src = { src }
+                    onClick = { setImage }
                 />
             );
         });
